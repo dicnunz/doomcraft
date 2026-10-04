@@ -34,8 +34,8 @@ final class ShowcaseCombat {
   mc.getServer().execute(()->{var p=NightCombat.player;var w=p.getServerWorld();
    for(var e:w.getEntitiesByClass(HostileEntity.class,p.getBoundingBox().expand(60),e->true))e.discard();
    var q=NightCombat.surface(w,-703,261);p.teleport(w,q.getX()+.5,q.getY(),q.getZ()+.5,0,0);w.setTimeOfDay(13000);p.setHealth(20);
-   if(take==0){spawn(EntityType.ZOMBIE,-1,13);spawn(EntityType.ZOMBIE,3,20);}
-   if(take==1){spawn(EntityType.CREEPER,0,12);spawn(EntityType.SKELETON,4,16);}
+   if(take==0){spawn(EntityType.ZOMBIE,-1,7);spawn(EntityType.ZOMBIE,3,10);}
+   if(take==1){spawn(EntityType.CREEPER,0,9);spawn(EntityType.SKELETON,4,10);}
    if(take==2){spawn(EntityType.ZOMBIE,-1,5);spawn(EntityType.ZOMBIE,2,8);spawn(EntityType.SKELETON,-4,16);}
    ready=true;
   });

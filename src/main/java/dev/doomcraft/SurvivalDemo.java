@@ -51,7 +51,7 @@ public final class SurvivalDemo {
   try{run(mc);}catch(Throwable e){e.printStackTrace();failed=true;System.out.println("SURVIVAL_DEMO_FAILED phase="+phase+" tick="+t);mc.options.useKey.setPressed(false);mc.options.attackKey.setPressed(false);mc.scheduleStop();}
  }
  private static void run(MinecraftClient mc){
-  if(SHOWCASE&&phase==0&&!Files.exists(Path.of("/tmp/doomcraft-recording-ready")))return;
+  if(SHOWCASE&&phase==0&&!Files.exists(Path.of("/tmp/doomcraft-recording-ready"))){org.lwjgl.glfw.GLFW.glfwSetWindowSize(mc.getWindow().getHandle(),1280,720);return;}
   t++;
   if(mc.currentScreen!=null&&mc.currentScreen.getClass().getSimpleName().equals("AccessibilityOnboardingScreen"))mc.setScreen(new TitleScreen());
   mc.options.pauseOnLostFocus=false;

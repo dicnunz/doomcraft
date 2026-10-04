@@ -2,6 +2,8 @@
 
 Minecraft 1.21.1 survival, with original Doom C pistol/shotgun simulation running at 35 Hz through JNI. Minecraft owns the generated world, mobs, terrain collision, damage, inventory, crafting, food, death and saves. The bottom of the screen is one Doom-style console, including the equipment slots and survival information.
 
+[Download the mod](https://github.com/dicnunz/doomcraft/releases/tag/v0.3.0).
+
 ## Play on Apple Silicon macOS
 
 Double-click **Play.command**, or run `./Play.command`. Choose **Singleplayer**, then create a Survival world or load a saved one normally. Install a JDK 21+ (tested with JDK 22), Gradle 8.8, Python 3, and Apple command-line developer tools (`xcode-select --install`). The launcher uses those tools. Your survival saves are in `run-survival/saves`; older arena/night worlds remain in `run/saves`.

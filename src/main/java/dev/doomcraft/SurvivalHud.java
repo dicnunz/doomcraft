@@ -27,7 +27,8 @@ public final class SurvivalHud {
   var p=mc.player;double[] s=NightCombat.state;int w=mc.getWindow().getScaledWidth(),h=mc.getWindow().getScaledHeight();float scale=w/(float)W;
   int top=h-Math.round(H*scale);boolean gun=NightCombat.isGun(p.getMainHandStack());
   if(gun&&mc.options.getPerspective().isFirstPerson()){
-   float weaponScale=Math.min(w/320f,h/200f);
+   // Keep the barrel below the world aiming point so small mobs remain visible.
+   float weaponScale=Math.min(w/320f,h/200f)*.76f;
    DoomCraftClient.drawWeaponAt(d,mc,(int)s[2],(int)s[3],s[4],s[5],weaponScale,top);
    if(s[6]>=0)DoomCraftClient.drawWeaponAt(d,mc,(int)s[6],(int)s[7],s[4],s[5],weaponScale,top);
   }

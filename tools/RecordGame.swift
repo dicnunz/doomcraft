@@ -18,7 +18,7 @@ final class Recorder: NSObject, SCRecordingOutputDelegate, SCStreamDelegate {
     var window: SCWindow? = nil
     for _ in 0..<240 {
         let content=try await SCShareableContent.excludingDesktopWindows(true,onScreenWindowsOnly:false)
-        window=content.windows.first { $0.frame.width > 100 && ($0.title ?? "").contains("Minecraft") && ($0.owningApplication?.applicationName ?? "").lowercased().contains("java") }
+        window=content.windows.first { $0.frame.width >= 1280 && ($0.title ?? "").contains("Minecraft") && ($0.owningApplication?.applicationName ?? "").lowercased().contains("java") }
         if window != nil {break}
         try await Task.sleep(nanoseconds:500_000_000)
     }
@@ -37,8 +37,10 @@ final class Recorder: NSObject, SCRecordingOutputDelegate, SCStreamDelegate {
     try stream.addRecordingOutput(output)
     try await stream.startCapture()
     try String(Date().timeIntervalSince1970).write(toFile:"/tmp/doomcraft-recording-ready",atomically:true,encoding:.utf8)
-    try await Task.sleep(nanoseconds:UInt64(seconds*1_000_000_000))
-    try await stream.stopCapture()
+    for _ in 0..<Int(seconds*2) { if recorder.finished {break};try await Task.sleep(nanoseconds:500_000_000) }
+    do {try await stream.stopCapture()} catch {
+      if (error as NSError).code != -3808 {throw error}
+    }
     for _ in 0..<100 {if recorder.finished {break};try await Task.sleep(nanoseconds:100_000_000)}
  }
 }
