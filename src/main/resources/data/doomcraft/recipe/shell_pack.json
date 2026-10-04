@@ -1,0 +1,1 @@
+{"type": "minecraft:crafting_shapeless", "category": "equipment", "ingredients": [{"item": "minecraft:paper"}, {"item": "minecraft:iron_nugget"}, {"item": "minecraft:gunpowder"}], "result": {"id": "doomcraft:shell_pack", "count": 1}}

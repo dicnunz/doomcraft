@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "doomcraft",
+  "version": "0.3.0",
+  "name": "DoomCraft \u2014 native Doom bridge",
+  "description": "Generated Minecraft night survival with native Doom pistol/shotgun behavior and Freedoom HUD; preserved native-demon arena.",
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "dev.doomcraft.DoomCraft"
+    ],
+    "client": [
+      "dev.doomcraft.DoomCraftClient"
+    ]
+  },
+  "license": "GPL-2.0-or-later",
+  "depends": {
+    "fabricloader": ">=0.16.5",
+    "minecraft": "1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "mixins": [
+    "doomcraft.mixins.json"
+  ]
+}

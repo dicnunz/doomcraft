@@ -1,0 +1,20 @@
+# Build/dependency caches
+.gradle/
+.gradle-home/
+build/
+# All worlds, accounts, client settings and recordings remain local
+run/
+run-survival/
+backups/
+*.log
+*.mp4
+*.mov
+.DS_Store
+.env*
+.agents/
+.codex/
+vendor/freedoom-*/
+vendor/*.zip
+vendor/*.tar.gz
+docs/final-survival/
+docs/showcase/

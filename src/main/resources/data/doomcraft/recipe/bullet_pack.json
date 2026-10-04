@@ -1,0 +1,1 @@
+{"type": "minecraft:crafting_shapeless", "category": "equipment", "ingredients": [{"item": "minecraft:iron_nugget"}, {"item": "minecraft:gunpowder"}], "result": {"id": "doomcraft:bullet_pack", "count": 1}}
